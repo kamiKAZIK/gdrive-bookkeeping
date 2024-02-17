@@ -20,5 +20,9 @@
 # Go workspace file
 go.work
 
+# IntelliJ workspace files
 .idea
 *.iml
+
+# Google
+credentials.json
