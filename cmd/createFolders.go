@@ -49,7 +49,7 @@ to quickly create a Cobra application.`,
             log.Fatalf("Unable to retrieve Drive client: %v", err)
         }
 
-        r, err := srv.Files.List().PageSize(10).Fields("nextPageToken, files(id, name)").Do()
+        r, err := srv.Files.List().Q("mimeType = 'application/vnd.google-apps.folder' and name = ''").PageSize(10).Fields("nextPageToken, files(id, name)").Do()
         if err != nil {
             log.Fatalf("Unable to retrieve files: %v", err)
         }
